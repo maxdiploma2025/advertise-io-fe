@@ -48,6 +48,7 @@
 </template>
 
 <script setup lang="ts">
+import { useRequiredRule, useEmailRule, useMinLenRule } from '@/composables/form-config'
 import { supabase } from '@/supabase'
 import { ElNotification } from 'element-plus'
 import { useRouter } from 'vue-router'

@@ -33,3 +33,7 @@ export function useRequiredRule ({ required = true } = {}): TElementPlus['FormIt
 export function useEmailRule (): TElementPlus['FormItemRule'] {
   return { type: 'email', message: () => t('validation.email'), trigger: ['change', 'blur'] }
 }
+
+export function useMinLenRule (min: number) {
+  return { min, message: t('general.form.minLen', [min]) } as TElementPlus['FormItemRule']
+}
