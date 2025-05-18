@@ -51,7 +51,7 @@
     loading.value = true
   
     try {
-      const res = await axios.post('https://advertise-io-be.onrender.com/chat', {
+      const res = await axios.post(`${import.meta.env.VITE_API_SERVER_URL}/chat`, {
         prompt: userMessage,
       })
   

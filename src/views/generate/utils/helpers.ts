@@ -83,7 +83,7 @@ export async function generateImage ( ) {
   const prompt = preferedOption.value === 'option' ? generatePrompt() : userPrompt.value
 
   try {
-    const response = await axios.post('https://advertise-io-be.onrender.com/image', {
+    const response = await axios.post(`${import.meta.env.VITE_API_SERVER_URL}/image`, {
       prompt,
       width: Number(imageWidth.value),
       height: Number(imageHeight.value)
