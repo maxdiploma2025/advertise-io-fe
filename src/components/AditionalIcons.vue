@@ -39,7 +39,7 @@ async function deleteImage (imageName: string) {
   } catch (error) {
     ElNotification({
       title: 'Error',
-      message: `Error deleting image: ${error.message}`,
+      message: `Error deleting image`,
       type: 'error'
     })
   }

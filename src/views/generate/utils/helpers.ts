@@ -60,16 +60,14 @@ export async function uploadImage (url: string) {
     return
   }
 
-  const { error: urlError } = supabase.storage
+  const { data: { publicUrl } } = supabase.storage
     .from('images')
     .getPublicUrl(fileName)
 
-  if (urlError) {
-    console.error('Error getting public URL:', urlError.message)
+  if (!publicUrl) {
+    console.error('Error getting public URL:')
     return
   }
-
-  console.log('Image uploaded successfully', data)
 }
 
 export async function submitForm ( formEl: FormInstance | undefined ) {
@@ -92,9 +90,8 @@ export async function generateImage ( ) {
     })
 
     imageUrl.value = response.data.image
-  } catch (error) {
-    console.error('Error fetching response:', error.response?.data || error.message)
-    throw error
+  } catch {
+    console.error('Error fetching response:')
   } finally {
     isLoading.value = false
   }

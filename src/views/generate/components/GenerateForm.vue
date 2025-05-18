@@ -83,7 +83,7 @@ const sizeOptions = [
 
 const rules = computed(() =>
   useElFormRules(
-    formConfig.reduce((acc, field) => {
+    formConfig.reduce((acc: any, field) => {
       acc[field.model] = [useRequiredRule()]
       return acc
     }, {

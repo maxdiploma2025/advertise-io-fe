@@ -1,4 +1,20 @@
-export const form = ref({
+interface FormData {
+  niche: string
+  companyName: string
+  imageContent: string
+  colors: string
+  ctaText: string
+  designStyle: string
+  imageSize: string
+}
+
+interface FormField {
+  label: string
+  model: keyof FormData
+  placeholder: string
+}
+
+export const form = ref<FormData>({
   niche: '',
   companyName: '',
   imageContent: '',
@@ -8,7 +24,7 @@ export const form = ref({
   imageSize: '1024x1024'
 })
 
-export const formConfig = [
+export const formConfig: FormField[] = [
   {
     label: 'Enter a niche',
     model: 'niche',
