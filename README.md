@@ -21,7 +21,9 @@
 ## Всьановлення .env залежностей
 
 VITE_API_SUPABASE_URL=
+
 VITE_API_SUPABASE_KEY=
+
 VITE_API_SERVER_URL = https://advertise-io-be.onrender.com or http://localhost:8089
 
 ## 🚀 Запуск проєкту
